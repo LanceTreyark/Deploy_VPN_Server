@@ -1,9 +1,9 @@
 #!/bin/bash
-#v.020523
+#v.032124
 date_time="$(date +"%m.%d.%y %I:%M%p")"
-read -p "Enter an additional commit message (optional)   " var_commit
+#read -p "Enter an additional commit message (optional)   " var_commit
 echo "*"
-git commit -m "$date_time $var_commit"
+git commit -m "$date_time" #$var_commit removed
 echo "*  *"
 echo "*  *  *"
 sleep 1
