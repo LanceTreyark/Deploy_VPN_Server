@@ -62,7 +62,7 @@ ls /home/$sudoUser/.ssh/
 echo "Create basic Alias commands to run updates in /home/$sudoUser/ directory"
 cat >/home/$sudoUser/.bash_aliases <<EOF
 alias hi="sudo apt update && sudo apt upgrade"
-alias deploy="sh ~/openVpnInstaller.sh"
+alias deploy="sudo sh ~/openvpn-install.sh"
 alias bb="btop"
 EOF
 echo "Enable the Alias file"
@@ -71,9 +71,9 @@ sudo chown -R $sudoUserID:$sudoUserID /home/$sudoUser/.ssh/
 sudo chown -R $sudoUserID:$sudoUserID /home/$sudoUser/.bash_aliases
 echo "adding openVpnInstaller"
 mkdir /tmp/VPN
-curl -o /tmp/VPN/openVpnInstaller.sh "https://raw.githubusercontent.com/LanceTreyark/openVpnInstaller/main/openVpnInstaller.sh"
-mv /tmp/VPN/openVpnInstaller.sh /home/$sudoUser/openVpnInstaller.sh
-sudo chmod +x /home/$sudoUser/openVpnInstaller.sh
+curl -o /tmp/VPN/openvpn-install.sh "https://raw.githubusercontent.com/LanceTreyark/Deploy_VPN_Server/main/openvpn-install.sh"
+mv /tmp/VPN/openvpn-install.sh /home/$sudoUser/openvpn-install.sh
+sudo chmod +x /home/$sudoUser/openvpn-install.sh
 cp -R /tmp/vArs /home/$sudoUser/
 echo "This script has concluded"
 echo "Switching to $sudoUser"
