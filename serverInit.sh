@@ -62,7 +62,7 @@ ls /home/$sudoUser/.ssh/
 echo "Create basic Alias commands to run updates in /home/$sudoUser/ directory"
 cat >/home/$sudoUser/.bash_aliases <<EOF
 alias hi="sudo apt update && sudo apt upgrade"
-alias deploy="sudo sh ~/openvpn-install.sh"
+alias deploy="cd ~/ && sudo ./openvpn-install.sh"
 alias bb="btop"
 EOF
 echo "Enable the Alias file"
